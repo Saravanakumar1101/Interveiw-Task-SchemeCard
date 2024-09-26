@@ -536,7 +536,7 @@ function updateValue(productIndex) {
     if (!isNaN(newValue) && newValue >= 0) {
         productValues[productIndex].currentValue = newValue;
         displayField.innerText = `${newValue.toFixed(2)}/ ₹${productValues[productIndex].totalValue.toFixed(2)}`;
-        alert(`Updated Product ${productIndex + 2} Current Value to: ₹${newValue.toFixed(2)}`);
+        
 
         // Adjust totalValue of the third product after updating currentValue
         adjustThirdProductTotalValue();
