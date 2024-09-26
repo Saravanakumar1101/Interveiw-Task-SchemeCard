@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interview Task</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+        rel="stylesheet">
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Inter", sans-serif;
+    background-color: #333;
+}
+
+ul li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+.container {
+    max-width: 1060px;
+    margin: 0 auto;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+.main-screen {
+    background-color: #f5f5f5;
+    width: 1120px;
+    height: 520px;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+
+.scheme-wrapper {
+    padding: 20px 20px;
+    background: linear-gradient(90deg, rgba(72, 116, 247, 0.2) 2%, #4975f8 100%), url(Bg.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: #ffffff;
+    border-radius: 10px;
+    margin-bottom: 30px;
+}
+
+.wrapper-details h2 {
+
+    font-size: 22px;
+    font-weight: 600;
+    line-height: 26.63px;
+    text-align: left;
+    margin-bottom: 10px;
+
+}
+
+.wrapper-details p {
+
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 20px;
+    text-align: left;
+
+}
+
+.period-date-range h4 {
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 16px;
+    text-align: right;
+    text-transform: capitalize;
+    margin-top: 30px;
+}
+
+.bottom {
+    display: flex;
+}
+
+.reward {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 10px;
+    border-bottom: 1px solid #E5E7EB;
+}
+
+.rewards h4 {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 20px;
+    text-align: left;
+    color: #000000;
+    margin-bottom: 5px;
+    text-transform: capitalize;
+}
+
+.rewards h6 {
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 18px;
+    text-align: left;
+    color: #6B7280;
+
+}
+
+.rewards.active .line-indicator {
+    height: 3px;
+    width: 90%;
+    position: absolute;
+    background-color: #4F46E5;
+    bottom: -10px;
+    border-radius: 2px;
+    margin: 0 auto;
+}
+
+.rewards {
+    flex-basis: 33.33%;
+    position: relative;
+}
+
+.rewards.active h4 {
+    color: #4F46E5;
+}
+
+.bottom-a {
+    border: 2px solid #E5E7EB;
+    width: 438px;
+    margin-right: 30px;
+    padding: 0 0 25px 0;
+}
+
+.prod-summary {
+    padding: 10px 10px 5px;
+}
+
+.product-detail {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    color: #6B7280;
+    margin-bottom: 15px;
+}
+
+.prod-detail-1 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.prod-detail-1 i {
+    color: #6366F133;
+    margin-right: 5px;
+}
+
+.prod-detail-1 h6 {
+    color: #6B7280;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 18px;
+    text-align: left;
+    text-transform: capitalize;
+}
+
+.product-precentage1 {
+    height: 8px;
+    width: 95%;
+    background-color: #DDDDFC;
+    margin: 0 auto 10px;
+    border-radius: 20px;
+    position: relative;
+}
+
+.product-precentage2 {
+    height: 8px;
+    background-color: #6366F1;
+    border-radius: 20px;
+    position: absolute;
+    left: 0;
+}
+
+.eligble {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 10px;
+}
+
+.eligble h4 {
+    font-family: Inter;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 18px;
+    text-align: left;
+
+}
+
+.eligble .amount {
+    color: #6366F1;
+}
+
+/* .bottom-top {
+    padding-top: 20px;
+} */
+
+.bottom-top h2 {
+    color: #000000;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 16px;
+    text-align: left;
+    text-transform: capitalize;
+    margin-bottom: 15px;
+}
+
+.bottom-top .content-1 {
+    font-family: Inter;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 20px;
+    text-align: left;
+    margin-bottom: 5px;
+
+}
+
+.bottom-top .content-2 {
+    font-family: Inter;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+    text-align: left;
+    color: #6B7280;
+    margin-bottom: 15px;
+}
+
+.profile-img {
+    margin-right: 18px;
+}
+
+.profile-img img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    opacity: 0px;
+
+}
+
+.bottom-bb {
+    display: flex;
+    align-items: center;
+}
+
+.profile-detail h6 {
+    font-family: Inter;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 20px;
+    text-align: left;
+
+}
+
+.name {
+    color: #333;
+}
+
+.contact {
+    color: #6B7280;
+}
+
+.prod-summary {
+    display: none;
+}
+
+.prod-summary.active {
+    display: block;
+}
+
+input[type="number"] {
+    width: 100px;
+    margin-bottom: 10px;
+    border: 1px solid #E5E7EB;
+    background-color: transparent;
+    padding: 2px 5px ;
+}
+
+button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    display: block;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+.total-Value{
+    font-weight: 600;
+}
+.prod-summary h6 {
+    color: #6B7280;
+    font-family: Inter;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 18px;
+    text-align: left;
+} 
+</Style>
+</head>
+
+<body>
+    <main class="main-screen">
+        <div class="container">
+            <div class="scheme-wrapper">
+                <div class="wrapper-details">
+                    <h2>Scheme</h2>
+                    <p>Win gift vouchers by buying eligible products. Know more here.</p>
+                </div>
+                <div class="period-date-range">
+                    <h4>Jan 2024 - Mar 2024</h4>
+                </div>
+            </div>
+            <div class="bottom">
+                
+                <div class="bottom-a">
+                    <div class="reward">
+                        <div class="rewards active">
+                            <h4>Bronze</h4>
+                            <h6>Gift Voucher 10,000</h6>
+                            <div class="line-indicator"></div>
+                        </div>
+                        <div class="rewards">
+                            <h4>Silver</h4>
+                            <h6>Gift Voucher 25,000</h6>
+                            <div class="line-indicator"></div>
+                        </div>
+                        <div class="rewards">
+                            <h4>Gold</h4>
+                            <h6>Gift Voucher 50,000</h6>
+                            <div class="line-indicator"></div>
+                        </div>
+                    </div>
+
+                    <div class="prod-summary active">
+                        <div class="product-detail">
+                            <div class="prod-detail-1">
+                                <i class="fas fa-check"></i>
+                                <h6 class="total-Value">Total Value</h6>
+                            </div>
+                            <div class="prod-detail-2">
+                                <h6 class="total-Value">0.00/ ₹1,50,000.00</h6>
+                            </div>
+                        </div>
+                        <div class="product-detail">
+                            <div class="prod-detail-1">
+                                <i class="fas fa-check"></i>
+                                <h6>Dr Grow</h6>
+                            </div>
+                            <div class="prod-detail-2">
+                                <h6 id="currentValue2Display">0.00/ ₹30,000.00</h6>
+                                <input type="number" id="currentValue2" value="0" min="0" />
+                                <button onclick="updateValue(1)">Update</button>
+                            </div>
+                        </div>
+                        <div class="product-detail">
+                            <div class="prod-detail-1">
+                                <i class="fas fa-check"></i>    
+                                <h6>Others</h6>
+                            </div>
+                            <div class="prod-detail-2">
+                                <h6 id="currentValue3Display">0.00/ ₹1,20,000.00</h6>
+                                <input type="number" id="currentValue3" value="0" min="0" />
+                                <button onclick="updateValue(2)">Update</button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- --------- -->
+
+                    <div class="prod-summary ">
+                        <div class="product-detail">
+                            <div class="prod-detail-1">
+                                <i class="fas fa-check"></i>
+                                <h6 class="total-Value">Total Value</h6>
+                            </div>
+                            <div class="prod-detail-2">
+                                <h6 class="total-Value">0.00/ ₹3,00,000.00</h6>
+                            </div>
+                        </div>
+                        <div class="product-detail">
+                            <div class="prod-detail-1">
+                                <i class="fas fa-check"></i>
+                                <h6>Dr Grow</h6>
+                            </div>
+                            <div class="prod-detail-2">
+                                <h6>0.00/ ₹60,000.00</h6>
+                            </div>
+                        </div>
+                        <div class="product-detail">
+                            <div class="prod-detail-1">
+                                <i class="fas fa-check"></i>
+                                <h6>Others</h6>
+                            </div>
+                            <div class="prod-detail-2">
+                                <h6>0.00/ ₹2,40,000.00</h6>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ------ -->
+
+
+                    <div class="prod-summary">
+                        <div class="product-detail">
+                            <div class="prod-detail-1">
+                                <i class="fas fa-check"></i>
+                                <h6 class="total-Value">Total Value</h6>
+                            </div>
+                            <div class="prod-detail-2">
+                                <h6 class="total-Value">0.00/ ₹5,00,000.00</h6>
+                            </div>
+                        </div>
+                        <div class="product-detail">
+                            <div class="prod-detail-1">
+                                <i class="fas fa-check"></i>
+                                <h6>Dr Grow</h6>
+                            </div>
+                            <div class="prod-detail-2">
+                                <h6>0.00/ ₹90,000.00</h6>
+                            </div>
+                        </div>
+                        <div class="product-detail">
+                            <div class="prod-detail-1">
+                                <i class="fas fa-check"></i>
+                                <h6>Others</h6>
+                            </div>
+                            <div class="prod-detail-2">
+                                <h6>0.00/ ₹4,10,000.00</h6>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-precentage1">
+                        <div class="product-precentage2">
+                        </div>
+                    </div>
+
+                    <div class="eligble">
+                        <div class="eli-r">
+                            <h4>Eligible Purchases</h4>
+                        </div>
+                        <div class="eli-l">
+                            <h4 class="amount">
+                                ₹1,50,000.00
+                            </h4>
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <div class="bottom-b">
+                    <div class="bottom-top">
+                        <h2>
+                            Your Rewards
+                        </h2>
+                        <p class="content-1">
+                            You are yet to start winning
+                        </p>
+                        <p class="content-2">
+                            Talk to your AquaConnect Officer to more about the scheme if you have any questions
+                        </p>
+                    </div>
+                    <div class="bottom-bb">
+                        <div class="profile-img">
+                            <img src="avatar-img.jpeg" alt="avatar">
+                        </div>
+                        <div class="profile-detail">
+                            <h6 class="name">
+                                Sathyan Velumani
+                            </h6>
+                            <h6 class="contact">
+                                6985746352
+                            </h6>
+                        </div>
+
+                        <div class="button" style="display: none;">
+                            <h2 style="background-color: red; color: #ffffff;">10,000</h2>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </main>
+    
+</body>
+<script>
+const rewards = document.querySelectorAll('.rewards');
+const detailElements = document.querySelectorAll('.prod-detail-2 h6');
+const percentageElement = document.querySelector('.product-precentage2');
+const productDetails = document.querySelectorAll('.product-detail');
+
+const productValues = [
+    { currentValue: 0, totalValue: 150000.00 },
+    { currentValue: 0, totalValue: 30000.00 },
+    { currentValue: 0, totalValue: 120000.00 },
+];
+
+function updateValue(productIndex) {
+    const inputField = document.getElementById(`currentValue${productIndex + 1}`);
+    const displayField = document.getElementById(`currentValue${productIndex + 1}Display`);
+    const newValue = parseFloat(inputField.value);
+
+    if (!isNaN(newValue) && newValue >= 0) {
+        productValues[productIndex].currentValue = newValue;
+        displayField.innerText = `${newValue.toFixed(2)}/ ₹${productValues[productIndex].totalValue.toFixed(2)}`;
+        alert(`Updated Product ${productIndex + 2} Current Value to: ₹${newValue.toFixed(2)}`);
+
+        // Adjust totalValue of the third product after updating currentValue
+        adjustThirdProductTotalValue();
+
+        // Call functions to update the UI
+        updateFirstProductValue();
+        updateProductDetails();
+        updateProgressBar();
+    } else {
+        alert('Please enter a valid number.');
+    }
+}
+
+// Adjust the totalValue of the third product
+function adjustThirdProductTotalValue() {
+    const increase = productValues[1].currentValue - productValues[1].totalValue;
+    productValues[2].totalValue -= increase;
+}
+
+function selectReward() {
+    rewards.forEach(reward => reward.classList.remove('active'));
+    this.classList.add('active');
+
+    const index = Array.from(rewards).indexOf(this);
+    const prodSummaries = document.querySelectorAll('.prod-summary');
+
+    prodSummaries.forEach((summary, idx) => {
+        summary.classList.toggle('active', idx === index);
+    });
+}
+
+function handleKeyDown(event) {
+    if (event.key === 'Enter' || event.key === ' ') {
+        event.preventDefault();
+        selectReward.call(this);
+    }
+}
+
+// Update value for product detail in UI
+function updateProductDetails() {
+    productValues.forEach(({ currentValue, totalValue }, index) => {
+        if (detailElements[index]) {
+            detailElements[index].textContent = `₹${currentValue.toLocaleString()} / ₹${totalValue.toLocaleString()}`;
+            const statusIcon = productDetails[index].querySelector('.prod-detail-1 i');
+            statusIcon.style.color = currentValue < totalValue ? '#6366F133' : 'blue';
+        }
+    });
+}
+
+function updateFirstProductValue() {
+    productValues[0].currentValue = productValues[1].currentValue + productValues[2].currentValue;
+}
+
+// Progress bar code
+function updateProgressBar() {
+    const { currentValue, totalValue } = productValues[0];
+    const percentage = Math.min((currentValue / totalValue) * 100, 100);
+    percentageElement.style.width = `${percentage}%`;
+}
+
+function initialize() {
+    updateFirstProductValue();
+    updateProductDetails();
+    updateProgressBar();
+
+    // Show the first prod-summary by default
+    const prodSummaries = document.querySelectorAll('.prod-summary');
+    if (prodSummaries.length > 0) {
+        prodSummaries[0].classList.add('active');
+    }
+}
+
+document.addEventListener('DOMContentLoaded', initialize);
+
+// Attach event listeners to rewards
+rewards.forEach(reward => {
+    reward.addEventListener('click', selectReward);
+    reward.addEventListener('keydown', handleKeyDown);
+});
+
+</Script>
+
+</html>
