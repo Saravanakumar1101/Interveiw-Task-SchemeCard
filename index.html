@@ -9,8 +9,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
-
-    <Style>
+    <style>
         * {
             margin: 0;
             padding: 0;
@@ -234,6 +233,10 @@
             color: #6366F1;
         }
 
+        /* .bottom-top {
+padding-top: 20px;
+} */
+
         .bottom-top h2 {
             color: #000000;
             font-size: 18px;
@@ -426,7 +429,15 @@
         .amount {
             display: none;
         }
-    </Style>
+
+        .product-precentage1.active {
+            display: block;
+        }
+
+        .product-precentage1 {
+            display: none;
+        }
+    </style>
 </head>
 
 <body>
@@ -474,7 +485,7 @@
                         </div>
                         <div class="rewards">
                             <h4>Gold</h4>
-                            <h6>Gift Voucher 50,000</h6>
+                            <h6>Gift Voucher 60,000</h6>
                             <div class="line-indicator"></div>
                         </div>
                     </div>
@@ -566,6 +577,14 @@
                             <div class="prod-detail-2">
                                 <h6 id="currentValue3Display">0.00/ ₹4,10,000.00</h6>
                             </div>
+                        </div>
+                    </div>
+                    <div class="product-precentage1 active">
+                        <div class="product-precentage2">
+                        </div>
+                    </div>
+                    <div class="product-precentage1">
+                        <div class="product-precentage2">
                         </div>
                     </div>
                     <div class="product-precentage1">
@@ -701,30 +720,35 @@
             const rewards = document.querySelectorAll('.rewards');
             const prodSummaries = document.querySelectorAll('.prod-summary');
             const eligibleAmount = document.querySelectorAll('.amount');
+            const Precentageapp = document.querySelectorAll('.product-precentage1');
 
             rewards.forEach(reward => reward.classList.remove('active'));
             prodSummaries.forEach(summary => summary.classList.remove('active'));
             eligibleAmount.forEach(amounts => amounts.classList.remove('active'));
+            Precentageapp.forEach(Propre => Propre.classList.remove('active'));
 
             if (totalValue <= 150000) {
                 rewards[0].classList.add('active');
                 prodSummaries[0].classList.add('active');
                 eligibleAmount[0].classList.add('active');
+                Precentageapp[0].classList.add('active');
             } else if (totalValue <= 300000) {
                 rewards[1].classList.add('active');
                 prodSummaries[1].classList.add('active');
                 eligibleAmount[1].classList.add('active');
+                Precentageapp[1].classList.add('active');
             } else if (totalValue <= 500000) {
                 rewards[2].classList.add('active');
                 prodSummaries[2].classList.add('active');
                 eligibleAmount[2].classList.add('active');
+                Precentageapp[2].classList.add('active');
             }
         }
 
         function updatePercentage(totalValue) {
             const goal = totalValueGoal(totalValue);
             const percentage = Math.min((totalValue / goal) * 100, 100);
-            document.querySelector('.product-precentage2').style.width = `${percentage}%`;
+            document.querySelector('.product-precentage1.active .product-precentage2').style.width = `${percentage}%`;
         }
 
         const rewards = document.querySelectorAll('.rewards');
@@ -740,12 +764,17 @@
             const index = Array.from(rewards).indexOf(this);
             const prodSummaries = document.querySelectorAll('.prod-summary');
             const eligibleAmount = document.querySelectorAll('.amount');
+            const Precentageapp = document.querySelectorAll('.product-precentage1');
+
 
             prodSummaries.forEach((summary, idx) => {
                 summary.classList.toggle('active', idx === index);
             });
             eligibleAmount.forEach((amounts, idx) => {
                 amounts.classList.toggle('active', idx === index);
+            });
+            Precentageapp.forEach((Propre, idx) => {
+                Propre.classList.toggle('active', idx === index);
             });
         }
 
