@@ -9,415 +9,437 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
-    <style>
+
+    <Style>
         * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    font-family: "Inter", sans-serif;
-    background-color: #333;
-    padding: 60px 0;
-}
-
-ul li {
-    list-style: none;
-}
-
-a {
-    text-decoration: none;
-}
-
-html {
-    scroll-behavior: smooth;
-}
-
-
-.container {
-    max-width: 1060px;
-    margin: 0 auto;
-    padding-right: 15px;
-    padding-left: 15px;
-}
-
-.range-screen {
-    background-color: #f5f5f5;
-    width: 1120px;
-    height: 120px;
-    margin: 0 auto 50px;
-    padding: 20px 0;
-}
-
-.field {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 15px;
-}
-
-.field h6 {
-    font-size: 14px;
-    font-weight: 500;
-    line-height: 20px;
-    text-align: left;
-    margin-bottom: 5px;
-}
-
-.main-screen {
-    background-color: #f5f5f5;
-    width: 1120px;
-    height: 420px;
-    margin: 0 auto;
-    padding: 20px 0;
-}
-
-.scheme-wrapper {
-    padding: 20px 20px;
-    background: url(Bg.png);
-    background-repeat: no-repeat;
-    background-size: cover;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    color: #ffffff;
-    border-radius: 10px;
-    margin-bottom: 30px;
-}
-
-.wrapper-details h2 {
-    font-size: 22px;
-    font-weight: 600;
-    line-height: 26.63px;
-    text-align: left;
-    margin-bottom: 10px;
-}
-
-.wrapper-details p {
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 20px;
-    text-align: left;
-}
-
-.period-date-range h4 {
-    font-size: 18px;
-    font-weight: 400;
-    line-height: 16px;
-    text-align: right;
-    text-transform: capitalize;
-    margin-top: 30px;
-}
-
-.bottom {
-    display: flex;
-}
-
-.reward {
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-    padding: 10px;
-    border-bottom: 1px solid #E5E7EB;
-}
-
-.rewards h4 {
-    font-size: 16px;
-    font-weight: 500;
-    line-height: 20px;
-    text-align: left;
-    color: #000000;
-    margin-bottom: 5px;
-    text-transform: capitalize;
-}
-
-.rewards h6 {
-    font-size: 12px;
-    font-weight: 400;
-    line-height: 18px;
-    text-align: left;
-    color: #6B7280;
-
-}
-
-.rewards.active .line-indicator {
-    height: 3px;
-    width: 90%;
-    position: absolute;
-    background-color: #4F46E5;
-    bottom: -10px;
-    border-radius: 2px;
-    margin: 0 auto;
-}
-
-.rewards {
-    flex-basis: 33.33%;
-    position: relative;
-}
-
-.rewards.active h4 {
-    color: #4F46E5;
-}
-
-.bottom-a {
-    border: 2px solid #E5E7EB;
-    width: 438px;
-    margin-right: 30px;
-    padding: 0 0 25px 0;
-}
-
-.prod-summary {
-    padding: 10px 10px 5px;
-}
-
-.product-detail {
-    display: flex;
-    align-items: baseline;
-    justify-content: space-between;
-    color: #6B7280;
-    margin-bottom: 15px;
-}
-
-.prod-detail-1 {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.prod-detail-1 i {
-    color: #6366F133;
-    margin-right: 5px;
-}
-
-.prod-detail-1 h6 {
-    color: #6B7280;
-    font-size: 12px;
-    font-weight: 600;
-    line-height: 18px;
-    text-align: left;
-    text-transform: capitalize;
-}
-
-.product-precentage1 {
-    height: 8px;
-    width: 95%;
-    background-color: #DDDDFC;
-    margin: 0 auto 10px;
-    border-radius: 20px;
-    position: relative;
-}
-
-.product-precentage2 {
-    height: 8px;
-    background-color: #6366F1;
-    border-radius: 20px;
-    position: absolute;
-    left: 0;
-}
-
-.eligble {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 10px;
-}
-
-.eligble h4 {
-    font-family: Inter;
-    font-size: 14px;
-    font-weight: 400;
-    line-height: 18px;
-    text-align: left;
-
-}
-
-.eligble .amount {
-    color: #6366F1;
-}
-
-/* .bottom-top {
-padding-top: 20px;
-} */
-
-.bottom-top h2 {
-    color: #000000;
-    font-size: 18px;
-    font-weight: 400;
-    line-height: 16px;
-    text-align: left;
-    text-transform: capitalize;
-    margin-bottom: 15px;
-}
-
-.bottom-top .content-1 {
-    font-family: Inter;
-    font-size: 14px;
-    font-weight: 500;
-    line-height: 20px;
-    text-align: left;
-    margin-bottom: 5px;
-
-}
-
-.bottom-top .content-2 {
-    font-family: Inter;
-    font-size: 14px;
-    font-weight: 400;
-    line-height: 20px;
-    text-align: left;
-    color: #6B7280;
-    margin-bottom: 15px;
-}
-
-.profile-img {
-    margin-right: 18px;
-}
-
-.profile-img img {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    opacity: 0px;
-
-}
-
-.bottom-bb {
-    display: flex;
-    align-items: center;
-}
-
-.profile-detail h6 {
-    font-family: Inter;
-    font-size: 14px;
-    font-weight: 500;
-    line-height: 20px;
-    text-align: left;
-
-}
-
-.name {
-    color: #333;
-}
-
-.contact {
-    color: #6B7280;
-}
-
-.prod-summary {
-    display: none;
-}
-
-.prod-summary.active {
-    display: block;
-}
-
-input[type="number"] {
-    width: 100px;
-    margin-bottom: 10px;
-    border: 1px solid #E5E7EB;
-    background-color: transparent;
-    padding: 2px 5px;
-    width: 460px;
-    height: 42px;
-    padding: 9px 13px 9px 13px;
-
-}
-
-.field button {
-    background-color: #6366F1;
-    width: 92px;
-    height: 42px;
-    padding: 13px 24px 13px 24px;
-    border-radius: 6px;
-    color: #ffffff;
-    margin-top: 12px;
-    border: none;
-
-}
-
-button:hover {
-    background-color: #0056b3;
-}
-
-.total-Value {
-    font-weight: 600;
-}
-
-.prod-summary h6 {
-    color: #6B7280;
-    font-family: Inter;
-    font-size: 12px;
-    font-weight: 400;
-    line-height: 18px;
-    text-align: left;
-}
-
-.rewardsbtn button {
-    width: 112px;
-    padding: 10px 16px;
-    gap: 10px;
-    border-radius: 32px;
-    border: none;
-    opacity: 0px;
-    display: inline-block;
-    text-align: center;
-    background-color: #383838;
-    font-family: Inter;
-    font-size: 18px;
-    font-weight: 800;
-    line-height: 20px;
-    text-align: center;
-
-}
-
-.rewardsbtn .bronze {
-    color: #D6600B;
-    display: none;
-}
-
-.rewardsbtn .Silvar {
-    color: #717171;
-    display: none;
-
-}
-
-.rewardsbtn .gold {
-    color: #DA8207;
-    display: none;
-
-}
-
-.hidden {
-    display: none;
-}
-.visible {
-    display: block;
-}
-.eli-r a {
-    color: #6366F1;
-    text-decoration: underline;
-    font-family: Inter;
-    font-size: 14px;
-    font-weight: 400;
-    line-height: 18px;
-    text-align: left;
-
-}
-    </style>
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Inter", sans-serif;
+            background-color: #333;
+            padding: 60px 0;
+        }
+
+        ul li {
+            list-style: none;
+        }
+
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+
+        .container {
+            max-width: 1060px;
+            margin: 0 auto;
+            padding-right: 15px;
+            padding-left: 15px;
+        }
+
+        .range-screen {
+            background-color: #f5f5f5;
+            width: 1120px;
+            height: 120px;
+            margin: 0 auto 50px;
+            padding: 20px 0;
+        }
+
+        .field {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .field h6 {
+            font-size: 14px;
+            font-weight: 500;
+            line-height: 20px;
+            text-align: left;
+            margin-bottom: 5px;
+        }
+
+        .main-screen {
+            background-color: #f5f5f5;
+            width: 1120px;
+            height: 420px;
+            margin: 0 auto;
+            padding: 20px 0;
+        }
+
+        .scheme-wrapper {
+            padding: 20px 20px;
+            background: url(Bg.png);
+            background-repeat: no-repeat;
+            background-size: cover;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            color: #ffffff;
+            border-radius: 10px;
+            margin-bottom: 30px;
+        }
+
+        .wrapper-details h2 {
+            font-size: 22px;
+            font-weight: 600;
+            line-height: 26.63px;
+            text-align: left;
+            margin-bottom: 10px;
+        }
+
+        .wrapper-details p {
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 20px;
+            text-align: left;
+        }
+
+        .period-date-range h4 {
+            font-size: 18px;
+            font-weight: 400;
+            line-height: 16px;
+            text-align: right;
+            text-transform: capitalize;
+            margin-top: 30px;
+        }
+
+        .bottom {
+            display: flex;
+        }
+
+        .reward {
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+            padding: 10px;
+            border-bottom: 1px solid #E5E7EB;
+        }
+
+        .rewards h4 {
+            font-size: 16px;
+            font-weight: 500;
+            line-height: 20px;
+            text-align: left;
+            color: #000000;
+            margin-bottom: 5px;
+            text-transform: capitalize;
+        }
+
+        .rewards h6 {
+            font-size: 12px;
+            font-weight: 400;
+            line-height: 18px;
+            text-align: left;
+            color: #6B7280;
+
+        }
+
+        .rewards.active .line-indicator {
+            height: 3px;
+            width: 90%;
+            position: absolute;
+            background-color: #4F46E5;
+            bottom: -10px;
+            border-radius: 2px;
+            margin: 0 auto;
+        }
+
+        .rewards {
+            flex-basis: 33.33%;
+            position: relative;
+        }
+
+        .rewards.active h4 {
+            color: #4F46E5;
+        }
+
+        .bottom-a {
+            border: 2px solid #E5E7EB;
+            width: 438px;
+            margin-right: 30px;
+            padding: 0 0 25px 0;
+        }
+
+        .prod-summary {
+            padding: 10px 10px 5px;
+        }
+
+        .product-detail {
+            display: flex;
+            align-items: baseline;
+            justify-content: space-between;
+            color: #6B7280;
+            margin-bottom: 15px;
+        }
+
+        .prod-detail-1 {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .prod-detail-1 i {
+            color: #6366F133;
+            margin-right: 5px;
+        }
+
+        .prod-detail-1 h6 {
+            color: #6B7280;
+            font-size: 12px;
+            font-weight: 600;
+            line-height: 18px;
+            text-align: left;
+            text-transform: capitalize;
+        }
+
+        .product-precentage1 {
+            height: 8px;
+            width: 95%;
+            background-color: #DDDDFC;
+            margin: 0 auto 10px;
+            border-radius: 20px;
+            position: relative;
+        }
+
+        .product-precentage2 {
+            height: 8px;
+            background-color: #6366F1;
+            border-radius: 20px;
+            position: absolute;
+            left: 0;
+        }
+
+        .eligble {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 10px;
+        }
+
+        .eligble h4 {
+            font-family: Inter;
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 18px;
+            text-align: left;
+
+        }
+
+        .eligble .amount {
+            color: #6366F1;
+        }
+
+        .bottom-top h2 {
+            color: #000000;
+            font-size: 18px;
+            font-weight: 400;
+            line-height: 16px;
+            text-align: left;
+            text-transform: capitalize;
+            margin-bottom: 15px;
+        }
+
+        .bottom-top .content-1 {
+            font-family: Inter;
+            font-size: 14px;
+            font-weight: 500;
+            line-height: 20px;
+            text-align: left;
+            margin-bottom: 5px;
+
+        }
+
+        .bottom-top .content-2 {
+            font-family: Inter;
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 20px;
+            text-align: left;
+            color: #6B7280;
+            margin-bottom: 15px;
+        }
+
+        .profile-img {
+            margin-right: 18px;
+        }
+
+        .profile-img img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            opacity: 0px;
+
+        }
+
+        .bottom-bb {
+            display: flex;
+            align-items: center;
+        }
+
+        .profile-detail h6 {
+            font-family: Inter;
+            font-size: 14px;
+            font-weight: 500;
+            line-height: 20px;
+            text-align: left;
+
+        }
+
+        .name {
+            color: #333;
+        }
+
+        .contact {
+            color: #6B7280;
+        }
+
+        .prod-summary {
+            display: none;
+        }
+
+        .prod-summary.active {
+            display: block;
+        }
+
+        input[type="number"] {
+            width: 100px;
+            margin-bottom: 10px;
+            border: 1px solid #E5E7EB;
+            background-color: transparent;
+            padding: 2px 5px;
+            width: 460px;
+            height: 42px;
+            padding: 9px 13px 9px 13px;
+
+        }
+
+        .field button {
+            background-color: #6366F1;
+            width: 92px;
+            height: 42px;
+            padding: 13px 24px 13px 24px;
+            border-radius: 6px;
+            color: #ffffff;
+            margin-top: 12px;
+            border: none;
+
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        .total-Value {
+            font-weight: 600;
+        }
+
+        .prod-summary h6 {
+            color: #6B7280;
+            font-family: Inter;
+            font-size: 12px;
+            font-weight: 400;
+            line-height: 18px;
+            text-align: left;
+        }
+
+        .rewardsbtn button {
+            width: 110px;
+            padding: 10px 16px;
+            border-radius: 32px;
+            border: none;
+            display: inline-block;
+            background-color: #383838;
+        }
+
+        .rewardsbtn h4 {
+            font-family: Inter;
+            font-size: 18px;
+            font-weight: 800;
+            line-height: 20px;
+            text-align: center;
+            font-weight: 800;
+            text-align: center;
+        }
+
+        .rewardsbtn .bronze {
+            display: none;
+        }
+
+        .bronze h4 {
+            background: linear-gradient(95.46deg, #D6600B 2.8%, #F58C41 18.14%, #FBCFB0 43.7%, #FBD0B1 67.56%, #F58B40 87.39%, #F58B40 104.89%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: inline-block;
+        }
+
+
+        .rewardsbtn .Silvar {
+            display: none;
+        }
+
+        .Silvar h4 {
+            background: linear-gradient(95.47deg, #717171 -0.22%, #9E9898 10.66%, #D6D6D6 26.65%, #D6D6D6 78.95%, #9E9E9E 93%, #9B9B9B 97.24%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: inline-block;
+        }
+
+        .rewardsbtn .gold {
+            display: none;
+        }
+
+        .gold h4 {
+            background: linear-gradient(95.47deg, #DA8207 -0.22%, #DD9318 10.66%, #FFCB3C 26.65%, #FFCB3C 78.95%, #E39C1E 93%, #FBC63A 97.24%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: inline-block;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .visible {
+            display: block;
+        }
+
+        .eli-r a {
+            color: #6366F1;
+            text-decoration: underline;
+            font-family: Inter;
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 18px;
+            text-align: left;
+
+        }
+
+        .amount.active {
+            display: block;
+        }
+
+        .amount {
+            display: none;
+        }
+    </Style>
 </head>
 
 <body>
-   <section class="range-screen">
+    <section class="range-screen">
         <div class="container">
             <div class="field">
                 <div class="field-lft">
                     <h6>Dr Grow</h6>
-                    <input type="number" id="inputValue1" placeholder="Enter Amount"/>
+                    <input type="number" id="inputValue1" placeholder="Enter Amount" />
                 </div>
                 <div class="field-rgt">
                     <h6>Others</h6>
-                    <input type="number" id="inputValue2" placeholder="Enter Amount"/>
+                    <input type="number" id="inputValue2" placeholder="Enter Amount" />
                 </div>
                 <div class="button">
                     <button onclick="updateValue()">Update</button>
@@ -553,10 +575,13 @@ button:hover {
 
                     <div class="eligble">
                         <div class="eli-r">
-                           <a href="https://www.figma.com/design/ej1ZsZS3Pny2AEP4z60Dk1/Scheme_card?node-id=0-1&node-type=canvas&t=LIGeAd8QCc7m9yLu-0" target="_blank">Eligible Purchases</a>
+                            <a href="https://www.figma.com/design/ej1ZsZS3Pny2AEP4z60Dk1/Scheme_card?node-id=0-1&node-type=canvas&t=LIGeAd8QCc7m9yLu-0"
+                                target="_blank">Eligible Purchases</a>
                         </div>
                         <div class="eli-l">
-                            <h4 class="amount">₹1,50,000.00</h4>
+                            <h4 class="amount active">₹1,50,000.00</h4>
+                            <h4 class="amount">₹3,00,000.00</h4>
+                            <h4 class="amount">₹5,00,000.00</h4>
                         </div>
                     </div>
 
@@ -566,7 +591,8 @@ button:hover {
                     <div class="bottom-top">
                         <h2>Your Rewards</h2>
                         <p id="content-1" class="content-1 visible">You are yet to start winning</p>
-                        <p id="content-2" class="content-2 visible">Talk to your AquaConnect Officer to know more about the scheme if you have
+                        <p id="content-2" class="content-2 visible">Talk to your AquaConnect Officer to know more about
+                            the scheme if you have
                             any questions</p>
                     </div>
                     <div class="bottom-bb">
@@ -579,12 +605,19 @@ button:hover {
                         </div>
                     </div>
                     <div class="bottom-top reward-contenet">
-                        <p id="reward-content" class="hidden content-2">Talk to your AquaConnect Officer to more about the scheme if you have any questions</p>
+                        <p id="reward-content" class="hidden content-2">Talk to your AquaConnect Officer to more about
+                            the scheme if you have any questions</p>
                     </div>
                     <div class="rewardsbtn">
-                        <button class="bronze">₹10,000</button>
-                        <button class="Silvar">₹25,000</button>
-                        <button class="gold">₹60,000</button>
+                        <button class="bronze">
+                            <h4>₹10,000</h4>
+                        </button>
+                        <button class="Silvar">
+                            <h4>₹25,000</h4>
+                        </button>
+                        <button class="gold">
+                            <h4>₹60,000</h4>
+                        </button>
                     </div>
                 </div>
             </div>
@@ -592,197 +625,167 @@ button:hover {
     </main>
 
     <script>
-        
-function updateValue() {
-    // Get input values
-    const inputValue1 = parseFloat(document.getElementById('inputValue1').value) || 0;
-    const inputValue2 = parseFloat(document.getElementById('inputValue2').value) || 0;
+        function updateValue() {
+            // Get input values
+            const inputValue1 = parseFloat(document.getElementById('inputValue1').value) || 0;
+            const inputValue2 = parseFloat(document.getElementById('inputValue2').value) || 0;
 
-    // Calculate the total value
-    const totalValue = inputValue1 + inputValue2;
+            // Calculate the total value
+            const totalValue = inputValue1 + inputValue2;
 
-    // Update prod-summary active child-(1)
-    const activeProdSummary = document.querySelector('.prod-summary.active');
-    const totalValueDisplay = activeProdSummary.querySelector('.total-Value');
-    totalValueDisplay.textContent = totalValue.toFixed(2) + '/ ₹' + totalValueGoal(totalValue) + '.00';
+            function findActive(totalValue) {
+                const prodSummaries = document.querySelectorAll('.prod-summary');
 
-    // Update current values for Dr Grow and Others in active prod-summary
-    const productDetails = activeProdSummary.querySelectorAll('.prod-detail-2 h6');
-    const maxDrGrowValue = parseFloat(productDetails[1].textContent.split('/ ')[1].replace(/₹|,/g, '').trim());
-    const maxOthersValue = parseFloat(productDetails[2].textContent.split('/ ')[1].replace(/₹|,/g, '').trim());
+                prodSummaries.forEach(summary => summary.classList.remove('active'));
 
-    productDetails[1].textContent = inputValue1.toFixed(2) + '/ ₹' + maxDrGrowValue.toLocaleString() + '.00'; // Dr Grow
-    productDetails[2].textContent = inputValue2.toFixed(2) + '/ ₹' + maxOthersValue.toLocaleString() + '.00'; // Others
+                if (totalValue <= 150000) {
+                    prodSummaries[0].classList.add('active');
+                } else if (totalValue <= 300000) {
+                    prodSummaries[1].classList.add('active');
+                } else if (totalValue <= 500000) {
+                    prodSummaries[2].classList.add('active');
+                }
+            }
 
-    changeIconColor(inputValue1, inputValue2);
+            findActive(totalValue);
+            const activeProdSummary = document.querySelector('.prod-summary.active');
+            const totalValueDisplay = activeProdSummary.querySelector('.total-Value');
+            totalValueDisplay.textContent = `${totalValue.toFixed(2)}/ ₹${totalValueGoal(totalValue)}.00`;
 
-    // Manage rewards based on total value
-    updateRewards(totalValue);
-    updatePercentage(totalValue);
-    updateTotalAmount(totalValue);
-    updateRewardPrize(totalValue);
-    updateDisplay(totalValue);
-}
-function changeIconColor(inputValue1, inputValue2) {
-    const activeProdSummary = document.querySelector('.prod-summary.active');
-    const icons = activeProdSummary.querySelectorAll('.prod-detail-1 i');
+            // Update current values for Dr Grow and Others
+            const productDetails = activeProdSummary.querySelectorAll('.prod-detail-2 h6');
+            const maxDrGrowValue = extractValue(productDetails[1].textContent);
+            const maxOthersValue = extractValue(productDetails[2].textContent);
 
-    // Select the total value and individual current values
-    const currentTotalText = activeProdSummary.querySelector('.total-Value').textContent; // Use class selector
-    const currentValue1Text = activeProdSummary.querySelector('#currentValue2Display').textContent;
-    const currentValue2Text = activeProdSummary.querySelector('#currentValue3Display').textContent;
+            productDetails[1].textContent = `${inputValue1.toFixed(2)}/ ₹${maxDrGrowValue.toLocaleString()}.00`;
+            productDetails[2].textContent = `${inputValue2.toFixed(2)}/ ₹${maxOthersValue.toLocaleString()}.00`;
 
-    // Extracting the numbers directly from the strings
-    const currentTotal = parseFloat(currentTotalText.split('/ ₹')[1].replace(/,/g, '').trim());
-    const currentValue1 = parseFloat(currentValue1Text.split('/ ₹')[1].replace(/,/g, '').trim());
-    const currentValue2 = parseFloat(currentValue2Text.split('/ ₹')[1].replace(/,/g, '').trim());
+            changeIconColor(inputValue1, inputValue2);
 
-    // Calculate the expected total
-    const addition = inputValue1 + inputValue2;
-
-    // Compare LHS and RHS values
-    icons[0].style.color = (currentTotal === addition) ? 'blue' : '#6366F133';
-    icons[1].style.color = (currentValue1 === inputValue1) ? 'blue' : '#6366F133';
-    icons[2].style.color = (currentValue2 === inputValue2) ? 'blue' : '#6366F133';
-
-}
-
-function totalValueGoal(totalValue) {
-    if (totalValue <= 150000) return 150000;
-    if (totalValue <= 300000) return 300000;
-    if (totalValue <= 500000) return 500000;
-    return 0;
-}
-
-function updateRewards(totalValue) {
-
-    const rewards = document.querySelectorAll('.rewards');
-    rewards.forEach(reward => reward.classList.remove('active'));
-
-    const prodSummaries = document.querySelectorAll('.prod-summary');
-    prodSummaries.forEach(summary => summary.classList.remove('active'));
-
-
-    if (totalValue <= 150000) {
-        rewards[0].classList.add('active');
-        prodSummaries[0].classList.add('active');
-    } else if (totalValue <= 300000) {
-        rewards[1].classList.add('active');
-        prodSummaries[1].classList.add('active');
-    } else if (totalValue <= 500000) {
-        rewards[2].classList.add('active');
-        prodSummaries[2].classList.add('active');
-    }
-}
-
-function updatePercentage(totalValue) {
-    const goal = totalValueGoal(totalValue);
-    const percentage = (totalValue / goal) * 100;
-    const percentageDisplay = document.querySelector('.product-precentage2');
-    percentageDisplay.style.width = Math.min(100, percentage) + '%';
-}
-
-
-const rewards = document.querySelectorAll('.rewards');
-rewards.forEach(reward => {
-    reward.addEventListener('click', selectReward);
-    reward.addEventListener('keydown', handleKeyDown);
-});
-
-function selectReward() {
-    rewards.forEach(reward => reward.classList.remove('active'));
-    this.classList.add('active');
-
-    const index = Array.from(rewards).indexOf(this);
-    const prodSummaries = document.querySelectorAll('.prod-summary');
-
-    prodSummaries.forEach((summary, idx) => {
-        summary.classList.toggle('active', idx === index);
-    });
-}
-
-function handleKeyDown(event) {
-    if (event.key === 'Enter' || event.key === ' ') {
-        event.preventDefault();
-        selectReward.call(this);
-    }
-}
-
-
-function updateTotalAmount(totalValue) {
-    const amountDisplay = document.querySelector('.amount');
-    let displayValue = 0;
-
-    if (totalValue <= 150000) {
-        displayValue = 150000;
-    } else if (totalValue <= 300000) {
-        displayValue = 300000;
-    } else if (totalValue <= 500000) {
-        displayValue = 500000;
-    }
-
-    amountDisplay.textContent = `₹${displayValue.toLocaleString()}.00`;
-}
-
-function updateRewardPrize(totalValue) {
-    // Select all buttons inside the rewardsbtn div
-    const rewardButtons = document.querySelectorAll('.rewardsbtn button');
-    const profileDetail = document.querySelector('.bottom-bb');
-
-    // Hide all buttons and profile details initially
-    rewardButtons.forEach(button => {
-        button.style.display = 'none';
-    });
-    if (profileDetail) {
-        profileDetail.style.display = 'none';
-    }
-    if (totalValue >= 150000) {
-        if (rewardButtons[0]) rewardButtons[0].style.display = 'inline-block'; // Bronze button
-    }
-    if (totalValue >= 300000) {
-        if (rewardButtons[1]) rewardButtons[1].style.display = 'inline-block'; // Silver button
-    }
-    if (totalValue === 500000) {
-        if (rewardButtons[2]) rewardButtons[2].style.display = 'inline-block'; // Gold button
-    }
-
-    // Optionally show the profile details if needed
-    if (totalValue >= (150000)) {
-        if (profileDetail) {
-            profileDetail.style.display = 'none'; // Show profile details if totalValue is above the threshold
+            // Manage rewards and updates
+            updateRewards(totalValue);
+            updatePercentage(totalValue);
+            updateRewardPrize(totalValue);
+            updateDisplay(totalValue);
         }
-    }
-}
 
-function updateDisplay(totalValue) {
-    const content1 = document.getElementById('content-1');
-    const content2 = document.getElementById('content-2');
-    const rewardContent = document.getElementById('reward-content');
+        function extractValue(text) {
+            return parseFloat(text.split('/ ')[1].replace(/₹|,/g, '').trim());
+        }
 
-    if (totalValue >= 150000) {
-        content1.classList.remove('visible');
-        content1.classList.add('hidden');
+        function changeIconColor(inputValue1, inputValue2) {
+            const activeProdSummary = document.querySelector('.prod-summary.active');
+            const icons = activeProdSummary.querySelectorAll('.prod-detail-1 i');
 
-        content2.classList.remove('visible');
-        content2.classList.add('hidden');
+            const [currentTotal, currentValue1, currentValue2] = [
+                extractValue(activeProdSummary.querySelector('.total-Value').textContent),
+                extractValue(activeProdSummary.querySelector('#currentValue2Display').textContent),
+                extractValue(activeProdSummary.querySelector('#currentValue3Display').textContent)
+            ];
 
-        rewardContent.classList.remove('hidden');
-        rewardContent.classList.add('visible');
-    } else {
-        content1.classList.remove('hidden');
-        content1.classList.add('visible');
+            const addition = inputValue1 + inputValue2;
+            const isMatch = (current, expected) => (current === expected) ? 'blue' : '#6366F133';
 
-        content2.classList.remove('hidden');
-        content2.classList.add('visible');
+            icons[0].style.color = isMatch(currentTotal, addition);
+            icons[1].style.color = isMatch(currentValue1, inputValue1);
+            icons[2].style.color = isMatch(currentValue2, inputValue2);
+        }
 
-        rewardContent.classList.remove('visible');
-        rewardContent.classList.add('hidden');
-    }
-}
+        function totalValueGoal(totalValue) {
+            return totalValue <= 150000 ? 150000 :
+                totalValue <= 300000 ? 300000 :
+                    totalValue <= 500000 ? 500000 : 0;
+        }
 
+        function updateRewards(totalValue) {
+            const rewards = document.querySelectorAll('.rewards');
+            const prodSummaries = document.querySelectorAll('.prod-summary');
+            const eligibleAmount = document.querySelectorAll('.amount');
 
-document.querySelector('button').addEventListener('click', updateValue);
+            rewards.forEach(reward => reward.classList.remove('active'));
+            prodSummaries.forEach(summary => summary.classList.remove('active'));
+            eligibleAmount.forEach(amounts => amounts.classList.remove('active'));
 
+            if (totalValue <= 150000) {
+                rewards[0].classList.add('active');
+                prodSummaries[0].classList.add('active');
+                eligibleAmount[0].classList.add('active');
+            } else if (totalValue <= 300000) {
+                rewards[1].classList.add('active');
+                prodSummaries[1].classList.add('active');
+                eligibleAmount[1].classList.add('active');
+            } else if (totalValue <= 500000) {
+                rewards[2].classList.add('active');
+                prodSummaries[2].classList.add('active');
+                eligibleAmount[2].classList.add('active');
+            }
+        }
+
+        function updatePercentage(totalValue) {
+            const goal = totalValueGoal(totalValue);
+            const percentage = Math.min((totalValue / goal) * 100, 100);
+            document.querySelector('.product-precentage2').style.width = `${percentage}%`;
+        }
+
+        const rewards = document.querySelectorAll('.rewards');
+        rewards.forEach(reward => {
+            reward.addEventListener('click', selectReward);
+            reward.addEventListener('keydown', handleKeyDown);
+        });
+
+        function selectReward() {
+            rewards.forEach(reward => reward.classList.remove('active'));
+            this.classList.add('active');
+
+            const index = Array.from(rewards).indexOf(this);
+            const prodSummaries = document.querySelectorAll('.prod-summary');
+            const eligibleAmount = document.querySelectorAll('.amount');
+
+            prodSummaries.forEach((summary, idx) => {
+                summary.classList.toggle('active', idx === index);
+            });
+            eligibleAmount.forEach((amounts, idx) => {
+                amounts.classList.toggle('active', idx === index);
+            });
+        }
+
+        function handleKeyDown(event) {
+            if (event.key === 'Enter' || event.key === ' ') {
+                event.preventDefault();
+                selectReward.call(this);
+            }
+        }
+
+        function updateRewardPrize(totalValue) {
+            const rewardButtons = document.querySelectorAll('.rewardsbtn button');
+            const profileDetail = document.querySelector('.bottom-bb');
+
+            rewardButtons.forEach(button => button.style.display = 'none');
+            if (profileDetail) profileDetail.style.display = 'none';
+
+            if (totalValue >= 150000) rewardButtons[0].style.display = 'inline-block'; // Bronze
+            if (totalValue >= 300000) rewardButtons[1].style.display = 'inline-block'; // Silver
+            if (totalValue === 500000) rewardButtons[2].style.display = 'inline-block'; // Gold
+        }
+
+        function updateDisplay(totalValue) {
+            const content1 = document.getElementById('content-1');
+            const content2 = document.getElementById('content-2');
+            const rewardContent = document.getElementById('reward-content');
+
+            const isRewardsVisible = totalValue >= 150000;
+
+            content1.classList.toggle('visible', !isRewardsVisible);
+            content1.classList.toggle('hidden', isRewardsVisible);
+
+            content2.classList.toggle('visible', !isRewardsVisible);
+            content2.classList.toggle('hidden', isRewardsVisible);
+
+            rewardContent.classList.toggle('hidden', !isRewardsVisible);
+            rewardContent.classList.toggle('visible', isRewardsVisible);
+        }
+
+        document.querySelector('button').addEventListener('click', updateValue);
 
     </script>
 </body>
