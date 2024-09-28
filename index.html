@@ -592,8 +592,8 @@ button:hover {
     </main>
 
     <script>
+        
 function updateValue() {
-
     // Get input values
     const inputValue1 = parseFloat(document.getElementById('inputValue1').value) || 0;
     const inputValue2 = parseFloat(document.getElementById('inputValue2').value) || 0;
@@ -614,24 +614,38 @@ function updateValue() {
     productDetails[1].textContent = inputValue1.toFixed(2) + '/ ₹' + maxDrGrowValue.toLocaleString() + '.00'; // Dr Grow
     productDetails[2].textContent = inputValue2.toFixed(2) + '/ ₹' + maxOthersValue.toLocaleString() + '.00'; // Others
 
-
+    changeIconColor(inputValue1, inputValue2);
 
     // Manage rewards based on total value
     updateRewards(totalValue);
-
-    // Update percentage
     updatePercentage(totalValue);
-
-    // Update total amount display
     updateTotalAmount(totalValue);
-
-    // Manage rewards based on total value awwards
-    updateRewardPrize(totalValue)
-
-    updateDisplay(totalValue)
+    updateRewardPrize(totalValue);
+    updateDisplay(totalValue);
 }
+function changeIconColor(inputValue1, inputValue2) {
+    const activeProdSummary = document.querySelector('.prod-summary.active');
+    const icons = activeProdSummary.querySelectorAll('.prod-detail-1 i');
 
+    // Select the total value and individual current values
+    const currentTotalText = activeProdSummary.querySelector('.total-Value').textContent; // Use class selector
+    const currentValue1Text = activeProdSummary.querySelector('#currentValue2Display').textContent;
+    const currentValue2Text = activeProdSummary.querySelector('#currentValue3Display').textContent;
 
+    // Extracting the numbers directly from the strings
+    const currentTotal = parseFloat(currentTotalText.split('/ ₹')[1].replace(/,/g, '').trim());
+    const currentValue1 = parseFloat(currentValue1Text.split('/ ₹')[1].replace(/,/g, '').trim());
+    const currentValue2 = parseFloat(currentValue2Text.split('/ ₹')[1].replace(/,/g, '').trim());
+
+    // Calculate the expected total
+    const addition = inputValue1 + inputValue2;
+
+    // Compare LHS and RHS values
+    icons[0].style.color = (currentTotal === addition) ? 'blue' : '#6366F133';
+    icons[1].style.color = (currentValue1 === inputValue1) ? 'blue' : '#6366F133';
+    icons[2].style.color = (currentValue2 === inputValue2) ? 'blue' : '#6366F133';
+
+}
 
 function totalValueGoal(totalValue) {
     if (totalValue <= 150000) return 150000;
